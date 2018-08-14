@@ -1,6 +1,10 @@
 package domain
 
+import "time"
+
 type Results struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
+	Start    time.Time `json:"start"`
+	End      time.Time `json:"end"`
+	Duration int64     `json:duration`
+	Objects  int64     `json:"objects"`
 }
