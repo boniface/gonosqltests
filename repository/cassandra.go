@@ -22,7 +22,6 @@ func getCluster() *gocql.Session {
 func create(person domain.Person) domain.Person {
 	fmt.Println(" **** Creating new person ****\n", person)
 	defer getCluster().Close()
-
 	if err := getCluster().Query("INSERT INTO persons(id, name) VALUES(?, ?)",
 		person.ID, person.Name).Exec(); err != nil {
 		fmt.Println("Error while inserting Emp")
@@ -56,7 +55,6 @@ func delete(person domain.Person) bool {
 }
 
 func read(id string) domain.Person {
-
 	fmt.Println(" **** Reading a person with ID ****\n", id)
 	defer getCluster().Close()
 	var person domain.Person
