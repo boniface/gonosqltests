@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/boniface/gonosqltests/api"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/middleware/logger"
 	"github.com/kataras/iris/middleware/recover"
-	"github.com/boniface/gonosqltests/api"
 )
 
 func main() {
@@ -25,7 +25,29 @@ func main() {
 	// Resource:  http://localhost:8080
 	app.Get("/", api.Index)
 
+	// Cassandra
+	app.Get("/cassandra/create/{id}", api.CassandraCreate)
+	app.Get("/cassandra/read", api.Index)
+	app.Get("/cassandra/update", api.Index)
+	app.Get("/cassandra/delete", api.Index)
 
+	// Mongo DB
+	app.Get("/mongodb/create/{id}", api.Index)
+	app.Get("/mongodb/read", api.Index)
+	app.Get("/mongodb/update", api.Index)
+	app.Get("/mongodb/delete", api.Index)
+
+	// Redis DB
+	app.Get("/redis/create/{id}", api.Index)
+	app.Get("/redis/read", api.Index)
+	app.Get("/redis/update", api.Index)
+	app.Get("/redis/delete", api.Index)
+
+	// Dgraph
+	app.Get("/dgraph/create/{id}", api.Index)
+	app.Get("/dgraph/read", api.Index)
+	app.Get("/dgraph/update", api.Index)
+	app.Get("/dgraph/delete", api.Index)
 
 	// same as app.Handle("GET", "/ping", [...])
 	// Method:   GET
