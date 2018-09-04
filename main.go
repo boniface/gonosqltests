@@ -27,27 +27,27 @@ func main() {
 
 	// Cassandra
 	app.Get("/cassandra/create/{id}", api.CassandraCreate)
-	app.Get("/cassandra/read", api.Index)
-	app.Get("/cassandra/update", api.Index)
-	app.Get("/cassandra/delete", api.Index)
+	app.Get("/cassandra/read", api.CassandraRead)
+	app.Get("/cassandra/update", api.CassandraUpdate)
+	app.Get("/cassandra/delete", api.CassandraDelete)
 
 	// Mongo DB
-	app.Get("/mongodb/create/{id}", api.Index)
-	app.Get("/mongodb/read", api.Index)
-	app.Get("/mongodb/update", api.Index)
-	app.Get("/mongodb/delete", api.Index)
+	app.Get("/mongodb/create/{id}", api.MongDBCreate)
+	app.Get("/mongodb/read", api.MongDBRead)
+	app.Get("/mongodb/update", api.MongDBUpdate)
+	app.Get("/mongodb/delete", api.MongDBDelete)
 
 	// Redis DB
-	app.Get("/redis/create/{id}", api.Index)
-	app.Get("/redis/read", api.Index)
-	app.Get("/redis/update", api.Index)
-	app.Get("/redis/delete", api.Index)
+	app.Get("/redis/create/{id}", api.RedisCreate)
+	app.Get("/redis/read", api.RedisRead)
+	app.Get("/redis/update", api.RedisUpdate)
+	app.Get("/redis/delete", api.RedisDelete)
 
 	// Dgraph
-	app.Get("/dgraph/create/{id}", api.Index)
-	app.Get("/dgraph/read", api.Index)
-	app.Get("/dgraph/update", api.Index)
-	app.Get("/dgraph/delete", api.Index)
+	app.Get("/dgraph/create/{id}", api.DgraphCreate)
+	app.Get("/dgraph/read", api.DgraphRead)
+	app.Get("/dgraph/update", api.DgraphUpdate)
+	app.Get("/dgraph/delete", api.DgraphDelete)
 
 	// same as app.Handle("GET", "/ping", [...])
 	// Method:   GET
