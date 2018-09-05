@@ -2,6 +2,7 @@ package api
 
 import (
 	"github.com/boniface/gonosqltests/domain"
+	"github.com/boniface/gonosqltests/services"
 	"github.com/kataras/iris"
 	"time"
 )
@@ -9,12 +10,8 @@ import (
 func CassandraCreate(ctx iris.Context) {
 	id, _ := ctx.Params().GetInt64("id")
 
-	results := domain.Results{
-		Duration: 10,
-		End:      time.Now(),
-		Objects:  id,
-		Start:    time.Now(),
-	}
+	results := services.Create(id)
+
 	ctx.JSON(results)
 }
 

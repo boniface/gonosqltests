@@ -1,4 +1,4 @@
-package services
+package cassandra
 
 import (
 	"github.com/boniface/gonosqltests/domain"
