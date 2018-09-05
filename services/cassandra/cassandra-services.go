@@ -14,4 +14,5 @@ func Create(number int64) domain.Results {
 		Start:    time.Now(),
 	}
 	return results
+
 }
